@@ -2,4 +2,26 @@
 title: "eds212-day2-"
 ---
 
-## 
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## plotting functions in ggplot2
+
+```{r}
+fx = function(x) {3 * x^2 + 4}
+#tell it it uses ggplot, can create vectors with 'c'
+
+ggplot(data.frame(x = c(1, 100)), aes(x = x)) + geom_function(fun = fx)
+```
+
+## partial derivative
+
+```{r}
+fxyz = expression(2 *x * y + 3 * (x^2) * (z^3))
+
+dfdy = D(fxyz, 'y')
+
+dfdy
+```
